@@ -13,7 +13,6 @@ body {
     justify-content: center;
 }
 
-
 body::before {
     background-image: url("img/code.png");
     background-repeat: no-repeat;
@@ -27,9 +26,12 @@ body::before {
 }
 
 .container {
-    width: 1200px;
-    height: 600px;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    max-height: 600px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     border-radius: 24px;
@@ -38,19 +40,22 @@ body::before {
     background-image: url("img/Ruido.png");
     background-size: 100% 100%;
     position: relative;
+    padding: 20px;
 }
-
 
 .container__contenido {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    width: 100%;
 }
 
 .container__informaciones {
     flex: 1;
-    padding: 3rem;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
 }
 
 .container__boton {
@@ -91,13 +96,15 @@ body::before {
 
 .container__botones {
     display: flex;
-    gap: 2em;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
 }
 
 h1 {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 72px;
-    padding-bottom: 3rem;
+    font-size: 48px;
+    padding-bottom: 1.5rem;
 }
 
 p,
@@ -106,6 +113,40 @@ button {
 }
 
 .texto__parrafo {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 400;
+}
+
+/* Media Queries para responsive design */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row;
+        height: 600px;
+        padding: 0;
+    }
+
+    .container__contenido {
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .container__informaciones {
+        padding: 3rem;
+        text-align: left;
+    }
+
+    .container__botones {
+        flex-direction: row;
+        gap: 2em;
+    }
+
+    h1 {
+        font-size: 72px;
+        padding-bottom: 3rem;
+    }
+
+    .texto__parrafo {
+        font-size: 32px;
+    }
 }
